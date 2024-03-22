@@ -1,0 +1,35 @@
+<?php
+/* Venda X calcular comissão 5% considerando
+5 10 15 25% de desconto em compras a vista, usando as formas de pagamento
+(PIX, DINHEIRO, BOLETO, DEBITO) */
+
+$venda=680;
+$tipoPag="pix";
+$pagVista=["pix","dinheiro"];
+
+$a_vista= in_array ($tipoPag, $pagVista);
+
+if ($a_vista){
+    if ($venda >= 1000){
+        $comissao= $venda * (5/100);
+        $vendaFinal= $venda - ($venda * 25/100);
+        echo "O valor da Comissão ficará $comissao e a venda ficará de $vendaFinal";
+    } else if ($venda < 1000 && $venda >= 800){
+        $comissao= $venda * (5/100);
+        $vendaFinal= $venda - ($venda * 15/100);
+        echo "O valor da Comissão ficará {$comissao} e a venda ficará de {$vendaFinal}";
+    } else if ($venda < 800 && $venda >= 500){
+        $comissao= $venda * (5/100);
+        $vendaFinal= $venda - ($venda * 10/100);
+        echo "O valor da Comissão ficará {$comissao} e a venda ficará de {$vendaFinal}";
+    } elseif ($venda < 500 && $venda >= 250){
+        $comissao= $venda * (5/100);
+        $vendaFinal= $venda - ($venda * 5/100);
+        echo "O valor da Comissão ficará {$comissao} e a venda ficará de {$vendaFinal}";
+    } else { $comissão= $venda * (5/100);
+    echo "O valor da Comissão ficará {$comissao} e a venda ficará de {$vendaFinal}";
+    }
+} else {
+    $comissao= $venda (5/100);
+    echo "O valor da Comissao ficará {$comissao} e a venda ficará de {$venda}";
+}
