@@ -30,6 +30,6 @@ if ($a_vista){
     echo "O valor da Comissão ficará {$comissao} e a venda ficará de {$vendaFinal}";
     }
 } else {
-    $comissao= $venda (5/100);
+    $comissao= $venda * (5/100);
     echo "O valor da Comissao ficará {$comissao} e a venda ficará de {$venda}";
 }
