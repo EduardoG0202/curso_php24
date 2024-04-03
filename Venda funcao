@@ -1,0 +1,57 @@
+<?php
+/* Venda X calcular comissão 5% considerando
+5 10 15 25% de desconto em compras a vista, usando as formas de pagamento
+(PIX, DINHEIRO, BOLETO, DEBITO) */
+
+$valor="1000";
+
+$tipo_pagamento ="dinheiro";
+
+$compras_a_vista = ["dinheiro", "pix"];
+
+$a_vista = in_array($tipo_pagamento, $compras_a_vista);
+ 
+$comissao = 5;
+
+function porcentagem($percentual){
+    $resultado = ($percentual /100);
+    return $resultado;
+}
+
+function desconto($valor, $percentual){
+    $resultado = $valor * porcentagem($valor, $percentual);
+    return $resultado;
+}
+
+if ($a_vista){
+    if ($valor >= 1000){
+        $percentual=25;
+        $venda_final = desconto($valor, $percentual);
+        $percentual=$comissao;
+        $venda_final= desconto($venda_final, $percentual);
+        echo $venda_final;
+    } else if ($valor < 1000 && $valor >= 750){
+        $percentual=15;
+        $venda_final = desconto($valor, $percentual);
+        $percentual=$comissao;
+        $venda_final= desconto($valor, $percentual);
+        echo $venda_final;
+    } else if ($valor < 750 && $valor >= 500){
+        $percentual=10;
+        $venda_final = desconto($valor, $percentual);
+        $percentual=$comissao;
+        $venda_final= desconto($valor, $percentual);
+        echo $venda_final;
+    } else if ($valor < 500 && $valor >= 250){
+        $percentual=5;
+        $venda_final = desconto($valor, $percentual);
+        $percentual=$comissao;
+        $venda_final= desconto($valor, $percentual);
+        echo $venda_final;
+    } else {
+        $percentual=$comissao;
+        $venda_final= desconto($valor, $percentual);
+    }
+} else {
+    echo "erro";
+}
