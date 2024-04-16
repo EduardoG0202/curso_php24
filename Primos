@@ -1,1 +1,26 @@
+<?php
 
+$arrayPrimos=[];
+
+function isPrimo($num){
+if ($num == 1){
+    return false;
+}
+    for($divisor = 2; $divisor < $num; $divisor++){
+        if ($num % $divisor == 0){
+        return false;
+        }
+    }
+    return true;
+}
+
+$num=2;
+
+while (count($arrayPrimos)<5){
+        if (isPrimo($num)){
+        $arrayPrimos[]=$num;
+    }
+    $num++;
+}
+
+echo  implode(" , " , $arrayPrimos);
