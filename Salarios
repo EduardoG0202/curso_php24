@@ -12,7 +12,7 @@ $salarioFinal= $salarioFinal - ($salarioFinal * $fgts /100);
 10% empregado normal
 12% supervisor
 14% gerente
-16% direção8*/
+16% direção*/
 
 $salario=1412.00;
 $fgts=11;
@@ -20,26 +20,30 @@ $aumento=10;
 $salarioFinal= $salario + ($salario * $aumento /100);
 $salarioFinal= $salarioFinal - ($salarioFinal * $fgts /100);
 
-$tipoEmpregado="direcao";
+$tipoEmpregado="supervisor";
 
 if ($tipoEmpregado == "empregado"){
 $aumento=10;
 $salarioFinal= $salario + ($salario * $aumento /100);
 $salarioFinal= $salarioFinal - ($salarioFinal * $fgts /100);
+$salarioFinal= round($salarioFinal, 2);
     echo "Se o funcionario ocupar o cargo {$tipoEmpregado} ele receberá $salarioFinal ";
 } elseif ($tipoEmpregado == "supervisor"){
 $aumento=12;
 $salarioFinal= $salario + ($salario * $aumento /100);
 $salarioFinal= $salarioFinal - ($salarioFinal * $fgts /100);
+$salarioFinal= round($salarioFinal, 2);
     echo "Se o funcionario ocupar o cargo {$tipoEmpregado} ele receberá $salarioFinal ";
 } elseif ($tipoEmpregado == "gerente"){
 $aumento=14;
 $salarioFinal= $salario + ($salario * $aumento /100);
 $salarioFinal= $salarioFinal - ($salarioFinal * $fgts /100);
+$salarioFinal= round($salarioFinal, 2);
     echo "Se o funcionario ocupar o cargo {$tipoEmpregado} ele receberá $salarioFinal" ;
 } elseif ($tipoEmpregado == "direcao"){
 $aumento=16;
 $salarioFinal= $salario + ($salario * $aumento /100);
 $salarioFinal= $salarioFinal - ($salarioFinal * $fgts /100);
+$salarioFinal= round($salarioFinal, 2);
     echo "Se o funcionario ocupar o cargo {$tipoEmpregado} ele receberá $salarioFinal ";
 }
