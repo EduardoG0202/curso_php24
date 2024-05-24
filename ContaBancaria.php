@@ -71,10 +71,22 @@ class ContaBancaria {
     }
 }
 
+Class Banco_do_Brasil{
+    public $titular = "Eduardo Bussolotto";
+    public $agencia = 1050;
+    public $conta = 5555 - 5;
+    
+}
+
+Class Bradesco{
+    public $titular = "Eduardo Bussolotto";
+    public $agencia = 2050;
+    public $conta = 6666 - 5;
+}
+
+Class Itau{
+    public $titular = "Eduardo Bussolotto";
+    public $agencia = 3050;
+    public $conta = 777 - 5;
+}
 $banco = new ContaBancaria();
-$banco->setContaDestinatario("Ariel Felippi", 1245, 2234 - 4);
-//$banco->getInfoConta();
-//$banco->getInfoContaDestinatario();
-$banco->deposito(1000);
-//$banco->exibirSaldo();
-$banco->transferencia(2501);
