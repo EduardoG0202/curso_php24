@@ -71,22 +71,26 @@ class ContaBancaria {
     }
 }
 
-Class Banco_do_Brasil{
+Class Banco_do_Brasil extends ContaBancaria {
     public $titular = "Eduardo Bussolotto";
     public $agencia = 1050;
     public $conta = 5555 - 5;
+    $bb = new Banco_do_Brasil;
     
 }
 
-Class Bradesco{
+Class Bradesco extends ContaBancaria {
     public $titular = "Eduardo Bussolotto";
     public $agencia = 2050;
     public $conta = 6666 - 5;
+    $bradesco = new Bradesco;
 }
 
-Class Itau{
+Class Itau extends ContaBancaria {
     public $titular = "Eduardo Bussolotto";
     public $agencia = 3050;
     public $conta = 777 - 5;
+    $itau = new Itau;
 }
-$banco = new ContaBancaria();
+
+$itau->getInfoConta;
