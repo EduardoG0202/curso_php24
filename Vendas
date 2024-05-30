@@ -1,7 +1,7 @@
 <?php
 /* Venda X calcular comissão 5% considerando
 5 10 15 25% de desconto em compras a vista, usando as formas de pagamento
-(PIX, DINHEIRO, BOLETO, DEBITO) */
+(PIX, DINHEIRO, BOLETO, DEBITO, credito) */
 
 $venda=680;
 $tipoPag="pix";

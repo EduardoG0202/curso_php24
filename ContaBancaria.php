@@ -4,12 +4,12 @@
 
 class ContaBancaria {
     Public $saldo = 1500;
-    public $titular = "Eduardo Bussolotto";
-    public $agencia = 6675;
-    public $conta = 8806 - 5;
     public $titularDestinatario = "";
     public $agenciaDestinatario = 0;
     public $contaDestinatario = 0;
+    public $titular;
+    public $agencia;
+    public $conta;
 
     public function setConta($titular, $agencia, $conta){
         $this->titular = $titular;
@@ -74,23 +74,22 @@ class ContaBancaria {
 Class Banco_do_Brasil extends ContaBancaria {
     public $titular = "Eduardo Bussolotto";
     public $agencia = 1050;
-    public $conta = 5555 - 5;
-    $bb = new Banco_do_Brasil;
-    
+    public $conta = "5555 - 5";
 }
 
 Class Bradesco extends ContaBancaria {
     public $titular = "Eduardo Bussolotto";
     public $agencia = 2050;
     public $conta = 6666 - 5;
-    $bradesco = new Bradesco;
 }
 
 Class Itau extends ContaBancaria {
     public $titular = "Eduardo Bussolotto";
     public $agencia = 3050;
-    public $conta = 777 - 5;
-    $itau = new Itau;
+    public $conta = "777 - 5";
 }
 
-$itau->getInfoConta;
+$itau = new Banco_do_Brasil();
+$itau->getInfoConta();
+$itau->setContaDestinatario("Tatiana", "5578-53", 785);
+$itau->transferencia(1000);
